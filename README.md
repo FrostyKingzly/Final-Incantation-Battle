@@ -18,6 +18,10 @@ This repository contains a first-pass Python rules engine for the battle concept
   - Link chains can be built and resolved
   - Final link element determined by link initiator
 - Lightweight battle state container for future Discord command integration
+- Simple bot command stub for image battles:
+  - `!battle` composites a configured background + enemy image
+  - Enemy is positioned on the left to leave room for player characters on the right
+  - Image paths are provided at runtime (`BattleRenderConfig`) to avoid committing binary assets
 
 ## Quick start
 
