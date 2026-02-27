@@ -1,5 +1,6 @@
 """Core domain models and battle engine primitives for Final Incantation."""
 
+from .commands import BattleRenderConfig, handle_bot_command
 from .engine import BattleState, TurnManager
 from .models import (
     Character,
@@ -25,4 +26,6 @@ __all__ = [
     "Party",
     "Skill",
     "Weapon",
+    "BattleRenderConfig",
+    "handle_bot_command",
 ]
