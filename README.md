@@ -22,6 +22,9 @@ This repository contains a first-pass Python rules engine for the battle concept
   - `!battle` composites a configured background + enemy image
   - Enemy is positioned on the left to leave room for player characters on the right
   - Image paths are provided at runtime (`BattleRenderConfig`) to avoid committing binary assets
+- Runnable Discord bot entrypoint:
+  - Reads token + image paths from environment variables
+  - Logs in and responds to `!battle` by generating and posting the rendered image
 
 ## Quick start
 
@@ -31,6 +34,23 @@ source .venv/bin/activate
 pip install -e .
 pytest
 ```
+
+## Run the bot
+
+Set the required environment variables and then start the bot with either the module form or installed command:
+
+```bash
+export DISCORD_BOT_TOKEN="your-token-here"
+export BATTLE_BACKGROUND_PATH="/absolute/path/to/background.png"
+export BATTLE_ENEMY_PATH="/absolute/path/to/enemy.png"
+# optional; defaults to generated/battle.png
+export BATTLE_OUTPUT_PATH="/absolute/path/to/output.png"
+
+python -m battle_system.bot
+# or: final-incantation-bot
+```
+
+Then in Discord, send `!battle` in a channel the bot can read/write.
 
 ## Next steps
 
